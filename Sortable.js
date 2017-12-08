@@ -869,6 +869,10 @@
 						this._animate(targetRect, target);
 					}
 				}
+			} else if (this.options.forceAutoScroll) {
+				// This is a custom option which works around auto-scroll not firing
+				// for nested `forceFallback: true` lists.
+				_autoScroll(evt, options, this.el);
 			}
 		},
 
